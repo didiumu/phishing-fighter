@@ -1,0 +1,18 @@
+message,label
+Hello my friend,safe
+Good morning,safe
+See you tomorrow,safe
+How are you today,safe
+Thanks for your help,safe
+
+Please verify your account,suspicious
+Your password will expire soon,suspicious
+Login to update your profile,suspicious
+Unusual login attempt detected,suspicious
+Confirm your identity,suspicious
+
+Your bank account is suspended click here,phishing
+You won a free phone click now,phishing
+Urgent action required login immediately,phishing
+Click here to claim reward,phishing
+Your account has been blocked,phishing

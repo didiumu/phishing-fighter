@@ -14,7 +14,7 @@ A simple cybersecurity tool that detects phishing messages using keyword analysi
  3)How to run
 python main.py
 
-## Version 2 Updates
+ Version 2 Updates
 
 - Added Risk Score system
 - Added Detection Reasons
@@ -23,3 +23,6 @@ python main.py
   - Safe
   - Suspicious
   - Phishing
+
+Project Goal
+This project is designed to simulate phishing detection used in cybersecurity awareness and SOC training.

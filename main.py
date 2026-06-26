@@ -1,15 +1,33 @@
-from analyzer import analyze_message
+import joblib
 
-print("=== PHISHING FIGHTER SYSTEM ===")
+model = joblib.load("phishing_model.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 
-message = input("Enter message/email: ")
+print("\n=== PHISHING FIGHTER AI SYSTEM ===")
 
-score, level, reasons = analyze_message(message)
+while True:
+    message = input("\nEnter message/email (or type 'exit'): ")
 
-print("\nRisk Score:", score)
-print("Level:", level)
+    if message.lower() == "exit":
+        break
 
-if reasons:
-    print("\nReasons:")
-    for reason in reasons:
-        print("-", reason)
+    vector = vectorizer.transform([message])
+
+    prediction = model.predict(vector)[0]
+    probs = model.predict_proba(vector)[0]
+
+    confidence = max(probs) * 100
+
+    # LEVEL LOGIC
+    if prediction == "phishing":
+        level = "PHISHING"
+    elif prediction == "suspicious":
+        level = "SUSPICIOUS"
+    else:
+        level = "SAFE"
+
+    print("\n--- RESULT ---")
+    print("Message:", message)
+    print("Prediction:", prediction.upper())
+    print("Level:", level)
+    print("Confidence:", f"{confidence:.2f}%")
