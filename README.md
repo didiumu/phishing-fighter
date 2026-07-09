@@ -1,28 +1,68 @@
- Phishing Fighter
+ Phishing Fighter AI
 
- 1)Description
-A simple cybersecurity tool that detects phishing messages using keyword analysis.
+ 1. Description
 
- 2)How it works
-- User enters message
-- System checks risky keywords
-- It returns:
-  - SAFE
-  - SUSPICIOUS
-  - PHISHING
+Phishing Fighter AI: is a cybersecurity tool designed to detect phishing messages using Machine Learning and rule-based risk analysis.
 
- 3)How to run
-python main.py
+The system analyzes user-provided messages and classifies them into:
 
- Version 2 Updates
+- SAFE
+- SUSPICIOUS
+- PHISHING
 
-- Added Risk Score system
-- Added Detection Reasons
-- Improved message analysis
-- Classifies messages as:
+It also provides:
+- AI confidence score
+- Risk score
+- Detection reasons
+
+2. How It Works
+
+The system follows this workflow:
+
+1. User enters a message or email content.
+2. The text is converted into numerical features using CountVectorizer.
+3. A trained Machine Learning model analyzes the message.
+4. The system predicts the category:
+   - Safe
+   - Suspicious
+   - Phishing
+5. A rule-based analyzer calculates:
+   - Risk score
+   - Risk level
+   - Reasons for detection
+
+3. Technologies Used
+
+- Python
+- Machine Learning
+- Scikit-learn
+- Pandas
+- Joblib
+- CountVectorizer
+- Multinomial Naive Bayes
+
+ 4. Features
+
+Version 1 - Keyword Detection
+- Basic phishing keyword analysis
+- Message classification:
   - Safe
   - Suspicious
   - Phishing
 
-Project Goal
-This project is designed to simulate phishing detection used in cybersecurity awareness and SOC training.
+ Version 2 - Risk Analysis
+- Added risk score system
+- Added detection reasons
+- Improved message analysis
+
+Version 3 - AI Phishing Detection
+- Added Machine Learning classifier
+- Added text feature extraction
+- Added AI confidence score
+- Combined ML prediction with rule-based analysis
+- Added explainable detection results
+
+5. Project Goal
+This project simulates a phishing detection system used in cybersecurity awareness and SOC training environments.
+
+
